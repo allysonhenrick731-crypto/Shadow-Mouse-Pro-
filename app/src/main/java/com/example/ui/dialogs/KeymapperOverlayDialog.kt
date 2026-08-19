@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
@@ -104,6 +105,24 @@ fun KeymapperOverlayDialog(
                             .padding(horizontal = 6.dp, vertical = 2.dp)
                     )
                 }
+            }
+
+            // FPS Overlay
+            Box(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(Alignment.TopStart)
+                    .background(FoxBlack.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                    .border(1.dp, NeonPurple.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
+            ) {
+                Text(
+                    text = "FPS: $currentFps",
+                    color = NeonPurple,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Monospace
+                )
             }
 
             // 2. Top Gamer Status Bar
